@@ -17,3 +17,19 @@ class Company:
     @property
     def devs(self):
         return [f.dev for f in Freebie.all if f.company == self]
+
+    
+    def give_freebie(self, dev, item_name, value):
+        return Freebie(item_name, value, dev, self)
+
+    @classmethod
+    def oldest_company(cls):
+        oldest = cls.all[0]
+        for c in cls.all:
+            if c.fyear < oldest.fyear:
+                oldest=c
+        return oldest
+        
+        
+        
+        

@@ -9,3 +9,9 @@ class Freebie:
         self.dev = dev
         self.company = company
         Freebie.all.append(self)
+
+    @property
+    def print_details(self):
+        print(f"{self.dev.name} owns a {self.item_name} from {self.company.name}")
+
+    
